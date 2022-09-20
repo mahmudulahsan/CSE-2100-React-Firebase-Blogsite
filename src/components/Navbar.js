@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Navbar.css"
 import { Link, useMatch, useResolvedPath } from 'react-router-dom'
-
+import SearchPage from '../components/SearchPage'
 const Navbar = () => {
   return (
     <div className="container">
@@ -23,33 +23,23 @@ const Navbar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarText">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
+              <div className="nav-item fw-bold">
                 <CustomLink className="nav-link fs-5" aria-current="page" to="/">
                   Home
                 </CustomLink>
-              </li>
-              <li className="nav-item">
+              </div>
+              <div className="nav-item fw-bold">
                 <CustomLink className="nav-link fs-5" aria-current="page" to="/blogs">
                   Blogs
                 </CustomLink>
-              </li>
-              <li className="nav-item">
+              </div>
+              <div className="nav-item fw-bold">
                 <CustomLink className="nav-link fs-5" to="/profile">
                   Profile
                 </CustomLink>
-              </li>
+              </div>
             </ul>
-            <form className="d-flex">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
+            <Link to="SearchPage"><i className="fa-solid fa-magnifying-glass fs-3 mx-5"></i></Link>
           </div>
         </div>
       </nav>
@@ -64,10 +54,10 @@ function CustomLink({ to, children, ...props }) {
   const isActive = useMatch({ path: resolvedPath.pathname, end: true })
 
   return (
-    <li className={isActive ? "active" : ""}>
+    <div className={isActive ? "active" : ""}>
       <Link to={to} {...props}>
         {children}
       </Link>
-    </li>
+    </div>
   )
 }
