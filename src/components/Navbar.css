@@ -1,19 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@700&family=Noto+Sans+Arabic:wght@300;400&family=Roboto+Mono:wght@200;300;400&family=Roboto:wght@300;400&display=swap');
 
 .navbar li.active {
-    /* background-color: #555 !important; */
     text-decoration: underline !important;
   }
   .navbar-brand{
     font-family: 'Hind Siliguri', sans-serif;
-    padding-right: 25px !important;
+    padding: 10px 25px !important;
+    /* background-image: url('https://img.freepik.com/free-vector/background-gradient-watercolor_125540-91.jpg?w=1380&t=st=1663764768~exp=1663765368~hmac=5141c37d039dcc9f96caa1df0457ae0bb647acebe3e9d9472a15a2ffe847997d'); */
+    background: #6d6d6d;
+    background: -webkit-linear-gradient(0deg, #6d6d6d 0%, #45738e 100%);
+    background: linear-gradient(0deg, #6d6d6d 0%, #45738e 100%);
+    color: white !important;
   }
 
-  
+  .nav-item{
+    font-family: 'Hind Siliguri', sans-serif;
+  }
   
   .nav-item:hover {
     /* background-color: #777 !important; */
-    text-decoration: underline !important;
+    /* text-decoration: underline !important; */
   }
 
   .fa-solid{

@@ -6,6 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #ebebeb;
+  /* background-image: url('https://img.freepik.com/free-vector/dhaka-bangladesh-line-skyline-with-panorama-white-background-vector-illustration-business-travel-tourism-concept-with-modern-buildings-image-banner-website_596401-584.jpg?w=1380&t=st=1663764887~exp=1663765487~hmac=8865094c2d09cc3d7bbf8a5c3957ae83dd8b595eb4d07e0216912531a77f78bd');
+  background-repeat: no-repeat; */
 }
 
 code {

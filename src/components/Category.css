@@ -1,0 +1,18 @@
+
+
+.category{
+    display: inline;
+    border: solid 3px #000;
+    font-size: 40px;
+    transition: .1s;
+    padding: 5px;
+    display: inline;
+    text-decoration: none;
+    color: #343a40; 
+}
+.category:hover{
+    background-color: #ced4da;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
+    color: #212529;
+    cursor: pointer;
+}

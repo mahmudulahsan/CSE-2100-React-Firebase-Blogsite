@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;700&family=Noto+Sans+Arabic:wght@300;400&family=Roboto+Mono:wght@200;300;400&family=Roboto:wght@300;400&display=swap");
+
+.single-card{
+    height: auto !important;
+}
+
+.card-title{
+    font-family: "Hind Siliguri", sans-serif;
+}
+
+.card-text {
+  font-family: "Hind Siliguri", sans-serif;
+}
+
+.back-pointer{
+  color: #001233;
+}
+.back-pointer:hover{
+  color: #494c5a;
+  cursor: pointer;
+}
+
+.top-left {
+  color: aliceblue;
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  height: 50px !important;
+  width: 50px !important;
+  font-size: 50px;
+}
+.top-left:hover{
+  color: #9ea1ab;
+}
+

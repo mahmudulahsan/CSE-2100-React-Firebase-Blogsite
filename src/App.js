@@ -2,12 +2,14 @@ import "./App.css";
 import Navbar from './components/Navbar'
 import Profile from './pages/Profile'
 import Home from './pages/Home'
-import SearchPage from './components/SearchPage'
+import Blogs from './components/Blogs'
 import SingleBlog from './pages/SingleBlog'
+import Notfound from "./components/Notfound";
 import {
   Route, 
-  Routes
+  Routes,
 } from 'react-router-dom'
+import SingleCategory from "./pages/SingleCategory";
 
 function App() {
   
@@ -18,10 +20,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}></Route>
           <Route path="/Home" element={<Home/>}></Route>
-          <Route path="/SearchPage" element={<SearchPage/>}></Route>
-          <Route path="/blogs" element={<SearchPage/>}></Route>
+          <Route path="/blogs" element={<Blogs/>}></Route>
           <Route path="/blogs/:id" element={<SingleBlog/>}></Route>
+          <Route path="/blogs/category" element={<Home/>}></Route>
+          <Route path="/blogs/category/:catId" element={<SingleCategory/>}></Route>
           <Route path="/profile" element={<Profile/>}></Route>
+          <Route path='*' element={<Notfound />} />
         </Routes>
       </div>
     </>

@@ -1,7 +1,6 @@
 import React from 'react'
 import "./Navbar.css"
 import { Link, useMatch, useResolvedPath } from 'react-router-dom'
-import SearchPage from '../components/SearchPage'
 const Navbar = () => {
   return (
     <div className="container">
@@ -24,22 +23,27 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarText">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <div className="nav-item fw-bold">
-                <CustomLink className="nav-link fs-5" aria-current="page" to="/">
-                  Home
+                <CustomLink className="nav-link fs-4" aria-current="page" to="/">
+                  হোম
                 </CustomLink>
               </div>
               <div className="nav-item fw-bold">
-                <CustomLink className="nav-link fs-5" aria-current="page" to="/blogs">
-                  Blogs
+                <CustomLink className="nav-link fs-4" aria-current="page" to="/blogs">
+                 ব্লগ
                 </CustomLink>
               </div>
+              {/* <div className="nav-item fw-bold">
+                <CustomLink className="nav-link fs-4" aria-current="page" to="/blogs/category">
+                  Category
+                </CustomLink>
+              </div> */}
               <div className="nav-item fw-bold">
-                <CustomLink className="nav-link fs-5" to="/profile">
-                  Profile
+                <CustomLink className="nav-link fs-4" to="/profile">
+                  প্রোফাইল
                 </CustomLink>
               </div>
             </ul>
-            <Link to="SearchPage"><i className="fa-solid fa-magnifying-glass fs-3 mx-5"></i></Link>
+            <Link to="blogs"><i className="fa-solid fa-magnifying-glass fs-3 mx-5"></i></Link>
           </div>
         </div>
       </nav>
