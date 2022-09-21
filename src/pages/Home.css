@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;700&family=Noto+Sans+Arabic:wght@300;400&family=Roboto+Mono:wght@200;300;400&family=Roboto:wght@300;400&display=swap");
+
+*{
+    font-family: "Hind Siliguri", sans-serif;
+}
+
 .feat-img{
     background-image:
     linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(37, 51, 213, 0.2)),
@@ -17,15 +23,12 @@
 }
 .cat-link-home:hover{
     text-decoration: underline;
-    color: aliceblue;
-    background-color: #212529;
+    color: white;
+    /* background-color: #a6a6af; */
+    background: -webkit-linear-gradient(0deg, #6d6d6d 0%, #45738e 100%);
+    background: linear-gradient(0deg, #6d6d6d 0%, #45738e 100%);
 }
 
 .cat-container{
     background-color: #f8f9fa;
-}
-
-.test{
-    /* background-image: url('https://img.freepik.com/free-vector/dhaka-bangladesh-line-skyline-with-panorama-white-background-vector-illustration-business-travel-tourism-concept-with-modern-buildings-image-banner-website_596401-584.jpg?w=1380&t=st=1663764887~exp=1663765487~hmac=8865094c2d09cc3d7bbf8a5c3957ae83dd8b595eb4d07e0216912531a77f78bd');
-    background-repeat: no-repeat; */
 }

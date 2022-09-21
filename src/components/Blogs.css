@@ -57,3 +57,10 @@
 .cat:hover{
   background-color: #52b788;
 }
+
+.author-link{
+  text-decoration: none;
+}
+.author-link:hover{
+  text-decoration: underline;
+}

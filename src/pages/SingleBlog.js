@@ -1,17 +1,16 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import data from "../Fetch Blogs/data";
 import './SingleBlog.css';
-import { Link } from 'react-router-dom'
 
 const SingleBlog = () => {
   const { id } = useParams();
   return (
     <div className="container mt-3">
       <div className="card single-card mb-3">
-        <img src={data[id-1].img} height="400" className="card-img-top" alt="..." />
+        <img src={data[id-1].img} height="400" classNameName="card-img-top" alt="..." />
         <Link to='/blogs'>
-            <i class="fa-regular top-left fa-circle-left"></i>
+            <i className="fa-regular top-left fa-circle-left"></i>
         </Link>
         <div className="card-body">
           <h2 className="card-title text-center">{data[id-1].title}</h2>

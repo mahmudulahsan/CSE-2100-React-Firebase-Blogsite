@@ -1,8 +1,7 @@
 
 
-.category{
+.author{
     display: inline;
-    /* border: solid 2px #000; */
     font-size: 20px;
     transition: .1s;
     padding: 5px;
@@ -12,8 +11,7 @@
     box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
     width: 400px;
 }
-.category:hover{
-    /* background-color: #ced4da; */
+.author:hover{
     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
     color: #212529;
     cursor: pointer;

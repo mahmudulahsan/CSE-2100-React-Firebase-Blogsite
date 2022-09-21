@@ -1,7 +1,6 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import data from "../Fetch Blogs/data";
-import {Link} from 'react-router-dom';
 import './SingleBlog.css'
 
 function SingleCategory() {
@@ -28,7 +27,7 @@ function SingleCategory() {
                 <Link className="link" to={`/blogs/${val.id}`}>
                 <div className="card-body">
                     <h4 className="card-title">{val.title}</h4>
-                      <small className="text-muted">{val.author}</small>
+                    <Link className="author-link" to={`/blogs/author/${val.author}`}><small className="text-muted">{val.author}</small></Link>
                       <p className="card-text">
                         {val.body.slice(0, 200)} . . . <span>আরও পড়ুন</span>{" "}
                       </p>
