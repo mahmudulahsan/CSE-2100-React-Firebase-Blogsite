@@ -5,9 +5,9 @@
 }
 
 .feat-img{
-    background-image:
+    /* background-image:
     linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(37, 51, 213, 0.2)),
-    url('https://images.thedailystar.net/sites/default/files/styles/big_202/public/images/2022/09/15/huawei_ruet_ict_academy_mou_signing_13th_sep_2022.jpg');
+    url('https://images.thedailystar.net/sites/default/files/styles/big_202/public/images/2022/09/15/huawei_ruet_ict_academy_mou_signing_13th_sep_2022.jpg'); */
     height: 350px;
     background-size: cover;
     color: white;
