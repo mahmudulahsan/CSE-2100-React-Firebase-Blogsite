@@ -12,7 +12,7 @@ const SingleAuthor = () => {
               <i class="fa-regular back-pointer fa-circle-left"></i>
             </Link>
           </h1>
-          <h1 className="p-2 flex-fill">{authorId}</h1>
+          <h1 className="p-2 flex-fill"><i class="fa-solid fa-user-pen"/> {authorId}</h1>
         </div>
         
         <hr />

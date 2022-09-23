@@ -53,7 +53,7 @@ const Navbar = () => {
                 লেখক
                 </CustomLink>
               </div>
-            <Link to="blogs"><i className="fa-solid fa-magnifying-glass fs-3 mx-5"></i></Link>
+            <Link to="blogs"><i className="navbar-items fa-solid fa-magnifying-glass fs-3 mx-5"></i></Link>
           </div>
         </div>
       </nav>

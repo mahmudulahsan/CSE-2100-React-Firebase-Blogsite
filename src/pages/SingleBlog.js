@@ -14,7 +14,7 @@ const SingleBlog = () => {
         </Link>
         <div className="card-body">
           <h2 className="card-title text-center">{data[id-1].title}</h2>
-          <small className="text-muted">{data[id-1].author}</small>
+          <Link className="author-link" to={`/blogs/author/${data[id-1].author}`}><small className="text-muted">{data[id-1].author}</small></Link>
           <p className="card-text fs-3">
           {data[id-1].body}
           </p>

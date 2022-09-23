@@ -26,14 +26,17 @@ const Home = () => {
           {/* first slide */}
           <div className="row p-4 p-md-5 mb-4 bg-dark text-white rounded">
             <div className="col-md-6 px-0">
-              <h3 className='fst-italic' style={{color: "#707071"}}>Recent Blogs</h3>
+              <h3 className='fst-italic' style={{color: "#707071"}}>Featured Blog</h3>
               <strong className="inline-block mb-2 text-primary">Education</strong>
               <h2 className="fst-italic">হুওাইয়াওেইর তৃতীয় আইসিটি একাডেমী হবে রুয়েটে</h2>
               <small>Mahmudul Ahsan</small>
               <p className="lead my-3 fs-5">
               শিক্ষার্থীদের তথ্য ও যোগাযোগ প্রযুক্তি বিষয়ক জ্ঞান ও দক্ষতা বিকাশের জন্য আইসিটি একাডেমী প্রতিষ্ঠার লক্ষ্যে সম্প্রতি রাজশাহী প্রকৌশল ও প্রযুক্তি বিশ্ববিদ্যালয়ের সঙ্গে একটি সমঝোতা স্মারক স্বাক্ষর করেছে বিশ্বের শীর্ষস্থানীয় আইসিটি অবকাঠামো সেবা দাতা প্রতিষ্ঠান হুয়াওয়ে টেকনোলজিস (বাংলাদেশ) লিমিটেড।. . .
               </p>
-              <Link to={"/blogs/7"}>আরও পড়ুন</Link>
+              <div className="text-center">
+                <Link  to={"/blogs/10"}>আরও পড়ুন</Link>
+              </div>
+              
             </div>
             <div className="col-6">
               <div className="feat-img">
@@ -46,14 +49,16 @@ const Home = () => {
           {/* second slide */}
         <div className="row p-4 p-md-5 mb-4 bg-dark text-white rounded">
               <div className="col-md-6 px-0">
-                <h3 className='fst-italic' style={{color: "#707071"}}>Featured Post</h3>
+                <h3 className='fst-italic' style={{color: "#707071"}}>Recent Post</h3>
                 <strong className="inline-block mb-2 text-primary">Technology</strong>
                 <h2 className="fst-italic">আইফোন ১৪, যা আছে যা নেই..</h2>
                 <small>Muaz Ibn Miraz</small>
                 <p className="lead my-3 fs-5">
                 কোম্পানিটি আইফোন ১৪ দুটি আকারে প্রকাশ করছে, আইফোন ১৪ এবং আইফোন ১৪ প্লাস। নতুন হ্যান্ডসেটগুলি স্যাটেলাইটের মাধ্যমে সাহায্যের জন্য জরুরি কল পাঠাতে সক্ষম। ফোনটি কাছের স্যাটেলাইটগুলির অবস্থান প্রদর্শন করবে এবং কীভাবে ডিভাইসটিকে স্যাটেলাইটের দিকে তাক করা যায় সেটা দেখাবে।\nপনেরো সেকেন্ড থেকে কয়েক মিনিটের মধ্যে 
                 </p>
-                <Link to={"/blogs/7"}>আরও পড়ুন</Link>
+                <div className="text-center">
+                  <Link  to={"/blogs/2"}>আরও পড়ুন</Link>
+                </div>
               </div>
               <div className="col-6">
                 <div className="feat-img">
@@ -66,14 +71,16 @@ const Home = () => {
           {/* third slide */}
               <div className="row p-4 p-md-5 mb-4 bg-dark text-white rounded">
                 <div className="col-md-6 px-0">
-                  <h3 className='fst-italic' style={{color: "#707071"}}>Featured Post</h3>
+                  <h3 className='fst-italic' style={{color: "#707071"}}>Recent Post</h3>
                   <strong className="inline-block mb-2 text-primary">Education</strong>
                   <h2 className="fst-italic">অদলবদল, পুরনো বই বিক্রির মাধ্যম</h2>
                   <small>Mahmudul Ahsan</small>
                   <p className="lead my-3 fs-5">
                   পুরনো বই পায়ে হাটার দূরত্বে কেনাবেচা করার সুযোগ সৃষ্টি করতেই অদলবদল এর সৃষ্টি। আমাদের আশেপাশেই অনেকের কাছে বিক্রি করার মতো বই আছে যা তারা আর পড়বেন না। আবার অনেকের অনেক সময় পুরনো বই প্রয়োজন হয়।  খুঁজি।
                   </p>
-                  <Link to={"/blogs/7"}>আরও পড়ুন</Link>
+                  <div className="text-center">
+                    <Link  to={"/blogs/3"}>আরও পড়ুন</Link>
+                  </div>
                 </div>
                 <div className="col-6">
                   <div className="feat-img">
@@ -100,7 +107,7 @@ const Home = () => {
       ))}
       </div>
     </div>
-    <h3 className='text-center'>Blogs</h3>
+    <h3 className='text-center fw-bold mt-3'>Blogs</h3>
     <Blogs />
     </div>
   )

@@ -16,17 +16,12 @@
   .nav-item{
     font-family: 'Hind Siliguri', sans-serif;
   }
-  
-  .nav-item:hover {
-    /* background-color: #777 !important; */
-    /* text-decoration: underline !important; */
-  }
 
-  .fa-solid{
+  .navbar-items{
     color: black;
     transition: .1s;
   }
-  .fa-solid:hover{
+  .navbar-items:hover{
     color: #0d6efd;
     font-size: 29px !important;
   }

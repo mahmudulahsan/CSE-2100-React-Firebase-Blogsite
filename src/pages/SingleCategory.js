@@ -13,7 +13,7 @@ function SingleCategory() {
             <i class="fa-regular back-pointer fa-circle-left"></i>
           </Link>
         </h1>
-        <h1 className="p-2 flex-fill">{catId}</h1>
+        <h1 className="p-2 flex-fill"><i class="fa-solid fa-sitemap"/> {catId}</h1>
       </div>
       
       <hr />

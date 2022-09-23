@@ -31,7 +31,8 @@ const Blogs = () => {
                   <Link className="link" to={`/blogs/${val.id}`}>
                     <div className="card-body">
                       <h4 className="card-title">{val.title}</h4>
-                      <Link className="author-link" to={`/blogs/author/${val.author}`}><small className="text-muted">{val.author}</small></Link>
+                      <Link className="author-link" to={`/blogs/author/${val.author}`}><small className="text-muted">{val.author} |</small></Link>
+                      <small className="text-muted"> {val.time}</small>
                       <p className="card-text">
                         {val.body.slice(0, 200)} . . . <span>আরও পড়ুন</span>{" "}
                       </p>
@@ -77,7 +78,8 @@ const Blogs = () => {
                     <Link className="link" to={`/blogs/${val.id}`}>
                       <div className="card-body">
                         <h4 className="card-title">{val.title}</h4>
-                        <Link className="author-link" to={`/blogs/author/${val.author}`}><small className="text-muted">{val.author}</small></Link>
+                        <Link className="author-link" to={`/blogs/author/${val.author}`}><small className="text-muted">{val.author} |</small></Link>
+                        <small className="text-muted"> {val.time}</small>
                         <p className="card-text">
                           {val.body.slice(0, 200)} . . . <span>আরও পড়ুন</span>{" "}
                         </p>

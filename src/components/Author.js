@@ -13,7 +13,7 @@ const Author = () => {
 
   return (
     <div className="container">
-      <h3 className='text-center mt-4'>লেখক</h3>
+      <h3 className='text-center mt-4'><i class="fa-solid fa-user-pen"/> লেখক</h3>
       <hr />
       <div className='d-flex justify-content-center'>
         <div className='d-flex flex-column'>
