@@ -6,7 +6,9 @@ import { getDocs, collection } from "firebase/firestore";
 
 const Blogs = () => {
 
-  const [postLists, setPostList] = useState([]);
+ const [postLists, setPostList] = useState([]);
+  // const [image, setImage] = useState("");
+
   const postsCollectionRef = collection(db, "posts");
 
   useEffect(() => {
@@ -39,7 +41,7 @@ const Blogs = () => {
                   <Link to={`/blogs/category/${val.category}`}>
                     <pre className="cat">{val.category}</pre>
                   </Link>
-                  {/* <img src={val.img} className="card-img-top" alt="..." /> */}
+                  <img src={val.imageUrls} className="card-img-top" alt="..." />
                   <Link className="link" to={`/blogs/${val.title}`}>
                     <div className="card-body">
                       <h4 className="card-title">{val.title}</h4>
@@ -86,7 +88,7 @@ const Blogs = () => {
                     <Link to={`/blogs/category/${val.category}`}>
                       <pre className="cat">{val.category}</pre>
                     </Link>
-                    {/* <img src={val.img} className="card-img-top" alt="..." /> */}
+                    <img src={val.imageUrls} className="card-img-top" alt="..." />
                     <Link className="link" to={`/blogs/${val.title}`}>
                       <div className="card-body">
                         <h4 className="card-title">{val.title}</h4>

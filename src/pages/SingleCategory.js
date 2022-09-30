@@ -38,7 +38,7 @@ function SingleCategory() {
             return(
             <div key={key} className="col-sm-4 blog-card">
             <div className="card">
-                <img src={val.img} className="card-img-top" alt="..." />
+                <img src={val.imageUrls} className="card-img-top" alt="..." />
                 <Link className="link" to={`/blogs/${val.title}`}>
                 <div className="card-body">
                     <h4 className="card-title">{val.title}</h4>

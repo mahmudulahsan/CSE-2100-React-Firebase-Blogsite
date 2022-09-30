@@ -2,20 +2,22 @@
 import { initializeApp } from "firebase/app";
 import {getAuth, GoogleAuthProvider} from 'firebase/auth'
 import { getFirestore } from "firebase/firestore";
+import { getStorage } from 'firebase/storage'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAuunPYr0dGrksbzCu40eI7AduwLlPs7Mw",
-  authDomain: "react-todo-2af9c.firebaseapp.com",
-  projectId: "react-todo-2af9c",
-  storageBucket: "react-todo-2af9c.appspot.com",
-  messagingSenderId: "469539210753",
-  appId: "1:469539210753:web:2f8bc647cb011ac80be200"
+  apiKey: "AIzaSyAdXMBtsnZbGSiUmSp765uqpSjNqiYLFyQ",
+  authDomain: "kotha-88498.firebaseapp.com",
+  projectId: "kotha-88498",
+  storageBucket: "kotha-88498.appspot.com",
+  messagingSenderId: "621875320283",
+  appId: "1:621875320283:web:76a6c91bf9a97c509a43fe"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+export const storage = getStorage(app);
 export const auth = getAuth(app)
 export const provider = new GoogleAuthProvider()
 export const db = getFirestore(app);

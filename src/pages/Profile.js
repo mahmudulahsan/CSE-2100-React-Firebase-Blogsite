@@ -15,7 +15,6 @@ const Profile = () => {
 
   onAuthStateChanged(auth, (user) => {
     if (!user) {
-      // const uid = user.uid;
       window.location.pathname = "/login"
     }
   });
@@ -27,6 +26,8 @@ const Profile = () => {
     };
     getPosts();
   },);
+
+  
   const deletePost = async (id) => {
     const postDoc = doc(db, "posts", id);
     await deleteDoc(postDoc);
@@ -46,9 +47,9 @@ const Profile = () => {
                 <Link to={`/blogs/category/${post.category}`}>
                   <pre className="cat">{post.category}</pre>
                 </Link>
-                {/* <img src={val.img} className="card-img-top" alt="..." /> */}
-                <Link className="link" to={`/blogs/${post.title}`}>
+                <img src={post.imageUrls} className="card-img-top" alt="..." />
                   <div className="card-body">
+                  <Link className="link" to={`/blogs/${post.title}`}>
                     <h4 className="card-title">{post.title}</h4>
                     <Link className="author-link" to={`/blogs/author/${post.author.name}`}><small className="text-muted">{post.author.name}</small></Link>
                     {/* <small className="text-muted"> {val.time}</small> */}
@@ -56,8 +57,8 @@ const Profile = () => {
                       {/* {post.body} */}
                       {post.body.slice(0, 200)} . . . <span>আরও পড়ুন</span>{" "}
                     </p>
+                  </Link>
                   </div>
-                </Link>
                 <button className='btn btn-danger' onClick={() => {
                   deletePost(post.id);
                 }}>Delete

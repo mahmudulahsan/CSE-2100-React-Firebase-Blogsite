@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Navbar.css"
 import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 import { auth } from '../firebase-config'
 import { signOut } from 'firebase/auth'
+import { onAuthStateChanged } from "firebase/auth";
 
 const Navbar = ({isAuth, setIsAuth}) => {
+
+  const [profileImage, setProfileImage] = useState("");
 
   const signUserOut = () => {
     signOut(auth).then(() => {
@@ -14,6 +17,12 @@ const Navbar = ({isAuth, setIsAuth}) => {
       window.location.pathname = "/"
     })
   }
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+        setProfileImage(user.photoURL)
+    }
+    });
 
   return (
     <div className="container">
@@ -66,6 +75,9 @@ const Navbar = ({isAuth, setIsAuth}) => {
                 <CustomLink className="nav-link fs-6" aria-current="page" to="/blogs/author">
                 লেখক
                 </CustomLink>
+              </div>
+              <div className="nav-item">
+                <img src={profileImage} className="profile-picture" />
               </div>
               {/* <div className="nav-item fw-bold">
                 {isAuth ? (<CustomLink className="text-dark nav-link fs-6" aria-current="page" to="/profile">
