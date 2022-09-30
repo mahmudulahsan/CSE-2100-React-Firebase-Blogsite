@@ -11,13 +11,6 @@ const Blogs = () => {
   const [postLists, setPostList] = useState([]);
   const postsCollectionRef = collection(db, "posts");
 
-  // onAuthStateChanged(auth, (user) => {
-  //   if (!user) {
-  //     // const uid = user.uid;
-  //     window.location.pathname = "/login"
-  //   }
-  // });
-
   useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(postsCollectionRef);

@@ -9,35 +9,33 @@ const [title, setTitle] = useState("");
 const [body, setBody] = useState("");
 const [category, setCategory] = useState("");
 
-
-
-onAuthStateChanged(auth, (user) => {
+    onAuthStateChanged(auth, (user) => {
     if (!user) {
-      window.location.pathname = "/login"
+        window.location.pathname = "/login"
     }
-  });
-
-const postsCollectionRef = collection(db, "posts");
-const createPost = async () => {
-    await addDoc(postsCollectionRef, {
-      title,
-      body,
-      category,
-      author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
     });
-};
 
-const docRef = doc(db, "author", auth.currentUser.uid );
-const data = {
-   name: auth.currentUser.displayName,
-};
+    const postsCollectionRef = collection(db, "posts");
+    const createPost = async () => {
+    await addDoc(postsCollectionRef, {
+        title,
+        body,
+        category,
+        author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
+    });
 
-setDoc(docRef, data)
-.then(() => {
-    console.log("Document has been added successfully")
-}).catch(error => {
-    console.log(error);
-})
+    const docRef = doc(db, "author", auth.currentUser.uid );
+    const data = {
+    name: auth.currentUser.displayName,
+    };
+
+    setDoc(docRef, data)
+    .then(() => {
+        console.log("Document has been added successfully")
+    }).catch(error => {
+        console.log(error);
+    })
+};
   return (
     <>
         <div className="cb-container container mt-5">

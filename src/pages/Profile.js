@@ -32,36 +32,12 @@ const Profile = ({isAuth}) => {
     await deleteDoc(postDoc);
   };
 
-
   return (
-  <>
     <div className="container">
         <h1 className='container text-center'>আমার ব্লগ</h1>
+        <div className="row mt-5">
         {postLists.map((post, key) => {
         return (
-          // <div className="post">
-          //   <div className="postHeader">
-          //     <div className="title">
-          //       <h1> {post.title}</h1>
-          //     </div>
-          //     <div className="deletePost">
-          //       {isAuth && post.author.id === auth.currentUser.uid && (
-          //         <button
-          //           onClick={() => {
-          //             deletePost(post.id);
-          //           }}
-          //         >
-          //           {" "}
-          //           &#128465;
-          //         </button>
-          //       )}
-          //     </div>
-          //   </div>
-          //   <div className="postTextContainer"> {post.postText} </div>
-          //   <h3>@{post.author.name}</h3>
-          // </div>
-
-
           <div key={key} className="col-sm-4 blog-card">
             {
               post.author.id === auth.currentUser.uid &&
@@ -89,14 +65,12 @@ const Profile = ({isAuth}) => {
               </div>
               )
             }
-
           </div>
         );
       })}
+      </div>
     </div>
-  </>
   )
-
 }
 
 export default Profile
