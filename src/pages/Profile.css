@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;700&family=Noto+Sans+Arabic:wght@300;400&family=Roboto+Mono:wght@200;300;400&family=Roboto:wght@300;400&display=swap");
+
+.form-control-lg{
+  border: 0 !important;
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 30px;
+}
+.form-control-lg:hover{
+  background-color: #f8f9fa !important;
+  cursor: pointer;
+}
+
+.blog-card {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.card{
+  height: 540px !important;
+}
+.card:hover{
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.card-title {
+  font-weight: 700;
+}
+
+.card-img {
+  height: 600px !important;
+}
+
+.link{
+  text-decoration: none;
+  color: black;
+  transition: .2s;
+}
+
+.link:hover{
+  color:#01497c;
+}
+
+.cat{
+  position: absolute;
+  right:-12px;
+  top:-5px;
+  background:#8d99ae;
+  text-align: center;
+  border-radius: 30px 30px 30px 30px;
+  color:white;
+  padding:5px 10px;
+  font-size:15px;
+  font-weight: bold;
+}
+.cat:hover{
+  background-color: #52b788;
+}
+
+.author-link{
+  text-decoration: none;
+}
+.author-link:hover{
+  text-decoration: underline;
+}

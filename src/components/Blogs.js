@@ -1,9 +1,30 @@
-import { useState } from "react";
-import data from "../Fetch Blogs/data";
+import { useState,useEffect } from "react";
+// import data from "../Fetch Blogs/data";
 import "./Blogs.css";
 import { Link, useLocation } from "react-router-dom";
+import {auth, db} from '../firebase-config'
+import {onAuthStateChanged} from 'firebase/auth'
+import { getDocs, collection } from "firebase/firestore";
 
 const Blogs = () => {
+
+  const [postLists, setPostList] = useState([]);
+  const postsCollectionRef = collection(db, "posts");
+
+  // onAuthStateChanged(auth, (user) => {
+  //   if (!user) {
+  //     // const uid = user.uid;
+  //     window.location.pathname = "/login"
+  //   }
+  // });
+
+  useEffect(() => {
+    const getPosts = async () => {
+      const data = await getDocs(postsCollectionRef);
+      setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    getPosts();
+  },);
 
   const [searchItem, setSearchItem] = useState("");
 
@@ -12,7 +33,7 @@ const Blogs = () => {
     return(
     <div>
       <div className="row mt-5">
-        {data
+        {postLists
           .filter((val) => {
             if (searchItem === "") {
               return val;
@@ -27,12 +48,12 @@ const Blogs = () => {
                   <Link to={`/blogs/category/${val.category}`}>
                     <pre className="cat">{val.category}</pre>
                   </Link>
-                  <img src={val.img} className="card-img-top" alt="..." />
-                  <Link className="link" to={`/blogs/${val.id}`}>
+                  {/* <img src={val.img} className="card-img-top" alt="..." /> */}
+                  <Link className="link" to={`/blogs/${val.title}`}>
                     <div className="card-body">
                       <h4 className="card-title">{val.title}</h4>
-                      <Link className="author-link" to={`/blogs/author/${val.author}`}><small className="text-muted">{val.author} |</small></Link>
-                      <small className="text-muted"> {val.time}</small>
+                      <Link className="author-link" to={`/blogs/author/${val.author.name}`}><small className="text-muted">{val.author.name}</small></Link>
+                      {/* <small className="text-muted"> {val.time}</small> */}
                       <p className="card-text">
                         {val.body.slice(0, 200)} . . . <span>আরও পড়ুন</span>{" "}
                       </p>
@@ -61,11 +82,11 @@ const Blogs = () => {
       </div>
         <hr />
         <div className="row mt-5">
-          {data
+          {postLists
             .filter((val) => {
               if (searchItem === "") {
                 return val;
-              } else if (val.title.toLowerCase().includes(searchItem.toLowerCase()) || val.body.toLowerCase().includes(searchItem.toLowerCase()) || val.category.toLowerCase().includes(searchItem.toLowerCase()) ||val.author.toLowerCase().includes(searchItem.toLowerCase())  ) return val;
+              } else if (val.title.toLowerCase().includes(searchItem.toLowerCase()) || val.body.toLowerCase().includes(searchItem.toLowerCase()) || val.category.toLowerCase().includes(searchItem.toLowerCase()) ||val.author.name.toLowerCase().includes(searchItem.toLowerCase())  ) return val;
             })
             .map((val, key) => {
               return (
@@ -74,12 +95,12 @@ const Blogs = () => {
                     <Link to={`/blogs/category/${val.category}`}>
                       <pre className="cat">{val.category}</pre>
                     </Link>
-                    <img src={val.img} className="card-img-top" alt="..." />
-                    <Link className="link" to={`/blogs/${val.id}`}>
+                    {/* <img src={val.img} className="card-img-top" alt="..." /> */}
+                    <Link className="link" to={`/blogs/${val.title}`}>
                       <div className="card-body">
                         <h4 className="card-title">{val.title}</h4>
-                        <Link className="author-link" to={`/blogs/author/${val.author}`}><small className="text-muted">{val.author} |</small></Link>
-                        <small className="text-muted"> {val.time}</small>
+                        <Link className="author-link" to={`/blogs/author/${val.author.name}`}><small className="text-muted">{val.author.name}</small></Link>
+                        {/* <small className="text-muted"> {val.time}</small> */}
                         <p className="card-text">
                           {val.body.slice(0, 200)} . . . <span>আরও পড়ুন</span>{" "}
                         </p>

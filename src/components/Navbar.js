@@ -1,7 +1,20 @@
 import React from 'react'
 import "./Navbar.css"
 import { Link, useMatch, useResolvedPath } from 'react-router-dom'
-const Navbar = () => {
+import {auth} from '../firebase-config'
+import { signOut } from 'firebase/auth'
+
+const Navbar = ({isAuth, setIsAuth}) => {
+
+  const signUserOut = () => {
+    signOut(auth).then(() => {
+      localStorage.clear();
+      setIsAuth(false);
+      console.log("logout success")
+      window.location.pathname = "/"
+    })
+  }
+
   return (
     <div className="container">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -32,15 +45,16 @@ const Navbar = () => {
                  ব্লগ
                 </CustomLink>
               </div>
-              {/* <div className="nav-item fw-bold mx-1">
-                <CustomLink className="nav-link fs-4" aria-current="page" to="/blogs/category">
-                ক্যাটাগরি
-                </CustomLink>
-              </div> */}
               <div className="nav-item fw-bold mx-1">
-                <CustomLink className="nav-link fs-4" to="/profile">
+                {isAuth && <CustomLink className="nav-link fs-4" to="/profile">
                   প্রোফাইল
-                </CustomLink>
+                </CustomLink>} 
+              </div>
+              <div className="nav-item fw-bold mx-1">
+                {isAuth && <CustomLink className="nav-link fs-4" to="/createblog">
+                  ব্লগ লিখুন
+                </CustomLink>}
+                
               </div>
             </ul>
             <div className="nav-item fw-bold">
@@ -52,6 +66,16 @@ const Navbar = () => {
                 <CustomLink className="nav-link fs-6" aria-current="page" to="/blogs/author">
                 লেখক
                 </CustomLink>
+              </div>
+              {/* <div className="nav-item fw-bold">
+                {isAuth ? (<CustomLink className="text-dark nav-link fs-6" aria-current="page" to="/profile">
+                {auth.currentUser.displayName} 
+                </CustomLink>) : <div></div>} 
+              </div> */}
+              <div className="nav-item fw-bold">
+                {!isAuth ? <CustomLink className="btn btn-success text-light nav-link fs-6" aria-current="page" to="/Login">
+                লগইন 
+                </CustomLink> :  <button onClick={signUserOut} className='btn btn-danger'>লগ আউট </button> } 
               </div>
             <Link to="blogs"><i className="navbar-items fa-solid fa-magnifying-glass fs-3 mx-5"></i></Link>
           </div>

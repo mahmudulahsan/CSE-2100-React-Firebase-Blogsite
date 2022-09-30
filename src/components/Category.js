@@ -1,11 +1,26 @@
 import './Category.css'
-import data from '../Fetch Blogs/data'
 import { Link } from 'react-router-dom'
 
+import { useEffect, useState } from "react";
+import { getDocs, collection } from "firebase/firestore";
+import { db } from "../firebase-config";
+
 const Category = () => {
+
+  const [postLists, setPostList] = useState([]);
+  const postsCollectionRef = collection(db, "posts");
+
   const set = new Set();
+
+  useEffect(() => {
+  const getPosts = async () => {
+    const data = await getDocs(postsCollectionRef);
+    setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  };
+    getPosts();
+  },);
   
-  data.map((val) => {
+  postLists.map((val) => {
     set.add(val.category)
   })
 
