@@ -21,7 +21,7 @@ const Category = () => {
   },);
   
   postLists.map((val) => {
-    set.add(val.category)
+    return(set.add(val.category))
   })
 
   const arr = new Array(...set);

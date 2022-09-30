@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import data from "../Fetch Blogs/data";
 import './SingleBlog.css'
 
 import { useEffect, useState } from "react";
@@ -20,7 +19,6 @@ function SingleCategory() {
     };
     getPosts();
   },);
-
 
   return (
     <div className="container">
@@ -52,7 +50,9 @@ function SingleCategory() {
                 </Link>
             </div>
             </div>
-        )}
+        )}else{
+          return <></>
+        }
       })}
       </div>
     </div>

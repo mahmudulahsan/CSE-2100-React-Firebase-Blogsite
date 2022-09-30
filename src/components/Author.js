@@ -20,11 +20,10 @@ const Author = () => {
   },);
   
   postLists.map((val) => {
-    set.add(val.author.name)
+    return(set.add(val.author.name))
   })
  
 const arr = new Array(...set);
- console.log(arr)
   return (
     <div className="container">
     <h3 className='text-center mt-4'><i class="fa-solid fa-user-pen"/> লেখক</h3>

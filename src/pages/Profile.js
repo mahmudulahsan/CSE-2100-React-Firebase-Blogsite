@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../firebase-config";
 
-const Profile = ({isAuth}) => {
+const Profile = () => {
 
   const [postLists, setPostList] = useState([]);
   const postsCollectionRef = collection(db, "posts");

@@ -23,7 +23,7 @@ const Home = () => {
     getPosts();
   },);
   postLists.map((val) => {
-    set.add(val.category)
+    return(set.add(val.category))
   })
 
   const arr = new Array(...set);
@@ -111,7 +111,7 @@ const Home = () => {
     </div>
 
     <div className='my-4 cat-container'>
-    <div className="d-flex justify-content-between">
+    <div className="d-flex justify-content-around">
       {arr.map((val, key)=>(
           <Link className='cat-link-home p-3' key={key} to={`/blogs/category/${val}`}><li className='fs-5'>{val}</li></Link>
       ))}

@@ -1,9 +1,7 @@
 import { useState,useEffect } from "react";
-// import data from "../Fetch Blogs/data";
 import "./Blogs.css";
 import { Link, useLocation } from "react-router-dom";
-import {auth, db} from '../firebase-config'
-import {onAuthStateChanged} from 'firebase/auth'
+import { db } from '../firebase-config'
 import { getDocs, collection } from "firebase/firestore";
 
 const Blogs = () => {
@@ -106,10 +104,7 @@ const Blogs = () => {
         </div>
       </div>
     );
-    
   }
-
-
 };
 
 export default Blogs;
