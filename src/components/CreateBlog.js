@@ -58,9 +58,9 @@ const [imageUrls, setImageUrls] = useState("");
   return (
     <>
         <div className="cb-container container mt-5">
-            <h2 className='text-center fw-bold'>Create a Blog</h2>
+            <h2 className='text-center fw-bold'>আপনার ব্লগটি লিখুন</h2>
             <div className="mb-3">
-                <label htmlFor="exampleFormControlInput1" className="form-label">Title</label>
+                <label htmlFor="exampleFormControlInput1" className="form-label">টাইটেল</label>
                 <input 
                 onChange={(event) => {
                     setTitle(event.target.value);
@@ -68,15 +68,27 @@ const [imageUrls, setImageUrls] = useState("");
                 type="text" className="form-control" id="exampleFormControlInput1" placeholder=""/>
             </div>
             <div className="mb-3">
-                <label htmlFor="exampleFormControlInput1" className="form-label">Category</label>
-                <input 
+                <label htmlFor="exampleFormControlInput1" className="form-label">ক্যাটাগরি</label>
+            <select 
                 onChange={(event) => {
                     setCategory(event.target.value);
                 }}
-                type="text" className="form-control" id="exampleFormControlInput1" placeholder=""/>
+                type="text" className="form-control" id="exampleFormControlInput1" placeholder="">
+                <option disabled>সুরাহ সিলেক্ট করুন ...</option>
+                <option value="Education">Education</option>
+                <option value="Technology">Technology</option>
+                <option value="Business">Business</option>
+                <option value="Sports">Sports</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Book">Book</option>
+                <option value="Islam">Islam</option>
+                <option value="International">International</option>
+                <option value="Literature">Literature</option>
+                <option value="Others">Others</option>
+            </select>
             </div>
             <div className="mb-3">
-                <label htmlFor="exampleFormControlTextarea1" className="form-label">Your blog</label>
+                <label htmlFor="exampleFormControlTextarea1" className="form-label">ব্লগের কনটেন্ট</label>
                 <textarea 
                 onChange={(event) => {
                     setBody(event.target.value);
@@ -84,8 +96,8 @@ const [imageUrls, setImageUrls] = useState("");
                 className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
             <div className="mb-3">
-                <label htmlFor="exampleFormControlTextarea1" className="form-label">Upload Image</label>
-                <input type="file" onChange={(e) => {setImageUpload(e.target.files[0])}} />
+                {/* <label htmlFor="exampleFormControlTextarea1" className="form-label"></label> */}
+                <input type="file" onChange={(e) => {setImageUpload(e.target.files[0])}}/>
                 <button onClick={uploadImage} className='btn btn-primary'>Upload image</button>
             </div>
             <button onClick={createPost} className='btn btn-success'>Submit Blog</button>
@@ -96,6 +108,3 @@ const [imageUrls, setImageUrls] = useState("");
 }
 
 export default CreateBlog
-
-
-

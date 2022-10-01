@@ -7,7 +7,6 @@ import { getDocs, collection } from "firebase/firestore";
 const Blogs = () => {
 
  const [postLists, setPostList] = useState([]);
-  // const [image, setImage] = useState("");
 
   const postsCollectionRef = collection(db, "posts");
 

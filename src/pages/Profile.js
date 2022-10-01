@@ -31,11 +31,13 @@ const Profile = () => {
   const deletePost = async (id) => {
     const postDoc = doc(db, "posts", id);
     await deleteDoc(postDoc);
+    console.log(id)
   };
 
   return (
     <div className="container">
-        <h1 className='container text-center'>আমার ব্লগ</h1>
+        <h1 className='container text-center m-4'>আমার ব্লগ</h1>
+        <hr />
         <div className="row mt-5">
         {postLists.map((post, key) => {
         return (
