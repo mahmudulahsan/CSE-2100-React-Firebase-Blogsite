@@ -60,7 +60,10 @@ const Navbar = ({isAuth, setIsAuth}) => {
                 </CustomLink>} 
               </div>
               <div className="nav-item fw-bold mx-1">
-                {isAuth && <CustomLink className="nav-link fs-4" to="/createblog">
+                {isAuth ? <CustomLink className="nav-link fs-4" to="/createblog">
+                  ব্লগ লিখুন
+                </CustomLink> : 
+                <CustomLink className="nav-link fs-4" to="/login">
                   ব্লগ লিখুন
                 </CustomLink>}
                 
@@ -77,7 +80,7 @@ const Navbar = ({isAuth, setIsAuth}) => {
                 </CustomLink>
               </div>
               <div className="nav-item">
-                <img src={profileImage} className="profile-picture" />
+                {isAuth && <img src={profileImage} className="profile-picture" alt="..."/>}
               </div>
               {/* <div className="nav-item fw-bold">
                 {isAuth ? (<CustomLink className="text-dark nav-link fs-6" aria-current="page" to="/profile">
