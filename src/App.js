@@ -16,12 +16,13 @@ import {
   Routes,
 } from 'react-router-dom'
 import SingleCategory from "./pages/SingleCategory";
+import Admin from "./components/Admin/Admin";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
   return (
     <>
-      <Navbar isAuth={isAuth} setIsAuth={setIsAuth} />   
+      <Navbar isAdmin='admin' isAuth={isAuth} setIsAuth={setIsAuth} />   
       <div className="container">
         <Routes>
           <Route path="/" element={<Home/>}></Route>
@@ -35,6 +36,7 @@ function App() {
           <Route path="/blogs/author/:authorId" element={<SingleAuthor/>}></Route>
           <Route path="/profile" element={<Profile/>}></Route>
           <Route path="/createblog" element={<CreateBlog/>}></Route>
+          <Route path="/admin" element={<Admin />}></Route>
           <Route path='*' element={<Notfound />} />
         </Routes>
       </div>

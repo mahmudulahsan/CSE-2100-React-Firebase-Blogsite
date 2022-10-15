@@ -25,7 +25,7 @@ const Profile = () => {
       setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     getPosts();
-  },);
+  },[postLists]);
 
   
   const deletePost = async (id) => {
@@ -61,9 +61,7 @@ const Profile = () => {
                     </p>
                   </Link>
                   </div>
-                <button className='btn btn-danger' onClick={() => {
-                  deletePost(post.id);
-                }}>Delete
+                <button className='btn btn-danger' onClick={() => { deletePost(post.id);}}>Delete
                 </button>
               </div>
               )

@@ -16,7 +16,7 @@ const Blogs = () => {
       setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     getPosts();
-  },);
+  },[]);
 
   const [searchItem, setSearchItem] = useState("");
 

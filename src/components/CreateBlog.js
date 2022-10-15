@@ -5,9 +5,6 @@ import { db, auth, storage } from "../firebase-config";
 import { onAuthStateChanged } from "firebase/auth";
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-
 const CreateBlog = () => {
 const [title, setTitle] = useState("");
 const [body, setBody] = useState("");

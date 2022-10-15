@@ -21,27 +21,6 @@ const SingleBlog = () => {
   },);
 
   return (
-    // <div className="container mt-3">
-    //   <div className="card single-card mb-3">
-    //     <img src={postLists[id-1].imageUrls} height="400" classNameName="card-img-top" alt="..." />
-    //     <Link to='/blogs'>
-    //         <i className="fa-regular top-left fa-circle-left"></i>
-    //     </Link>
-    //     <div className="card-body">
-    //       <h2 className="card-title text-center">{postLists[id-1].title}</h2>
-    //       <Link className="author-link" to={`/blogs/author/${postLists[id-1].author}`}><small className="text-muted">{postLists[id-1].author}</small></Link>
-    //       <p className="card-text fs-3">
-    //       {postLists[id-1].body}
-    //       </p>
-    //       <p className="card-text">
-    //         {/* <small className="text-muted">{data[id-1].time}</small> */}
-    //       </p>
-    //     </div>
-    //   </div>
-    // </div>
-
-
-
     <div className="container">
       {postLists.map( (val, key) => {
       return (
